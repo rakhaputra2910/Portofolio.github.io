@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url(gambar2.jpg);
+    background-size: cover;
+    font-family: "Montserrat", sans-serif;
+    color: teal;
+}
+.header {
+    background-color: navy;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+    font-weight: 700;
+    font-size: 30px;
+    justify-content:end;
+}
+.sidebar {
+    background-color: black;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    margin-top: 40px;
+    transform: translateX(-250px);
+    transition: transform 250ms ease-in-out;
+}
+
+.profile {
+    text-align: center;
+    padding: 20px;
+    display:block;
+    cursor: pointer;
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 100px;
+    border: 2px solid #f1e8e6;
+}
+.profile h3 {
+    margin: 10px 0;
+}
+.profile li {
+    list-style: none;
+    display: inline-flex;
+    margin: 0 5px;
+    font-size: 20px;
+    padding: 10px;
+    transition: all 0.5s;
+}
+.profile a {
+    color: inherit;
+}
+.profile li:hover {
+    padding: 10px 20px;
+    background-color: white;
+    color: #361d32;
+    border-radius: 60px;
+}
+.menu li a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    padding: 20px;
+    border-bottom: 1px solid rgba(227, 224, 224, .2)
+}
+.menu li a:hover {
+background-color: #ddd;
+color: #361d32;
+transition: all 0.4s;
+text-align: center;
+}
+.toggle-icon div {
+    background-color: #f1e8e6;
+    width: 100%;
+    height: 3px;
+    transition: all 0.3s;
+}
+.toggle-icon {
+    position: fixed;
+    top: 22px;
+    left: 15px;
+    width: 22px;
+    height: 22px;
+    z-index: 9999;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.bar-center {
+    margin: 3px 0;
+}
+input[type="checkbox"]:checked ~ .sidebar {
+    transform: translateX(0);
+}
+input[type="checkbox"]:checked ~ .toggle-icon > .bar-top {
+    transform: rotate(45deg);
+    margin-top: 8px;
+}
+input[type="checkbox"]:checked ~ .toggle-icon > .bar-center {
+   opacity: 0;
+}
+input[type="checkbox"]:checked ~ .toggle-icon > .bar-bottom {
+    transform: rotate(-45deg);
+    margin-top: -12px;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 550px;
+    padding-left: 80px;
+}
+.content h1 {
+    color: white;
+    font-size: 70px;
+}
+.content h3 {
+    padding-top: 15px;
+    color: white;
+    font-size: 30px;
+}
+.content p {
+    color: white;
+    font-size: 20px;
+}
+.content span {
+    color: powderblue;
+}
+
+/* Menambahkan media query untuk responsivitas */
+@media only screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%; /* Mengubah lebar sidebar menjadi 100% pada layar kecil */
+        transform: translateX(0);
+    }
+
+    .toggle-icon {
+        display: block; /* Menampilkan toggle-icon pada layar kecil */
+    }
+
+    .header {
+        padding-right: 15px; /* Mengurangi padding header pada layar kecil */
+    }
+
+    .content {
+        padding-left: 15px; /* Mengurangi padding pada konten pada layar kecil */
+    }
+}

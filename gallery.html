@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sidebar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgba(0, 0, 0, 0.9);
+    font-family: "Montserrat", sans-serif;
+    color: teal;
+}
+.content h1 {
+    color: blueviolet; /* Gantilah #your-color dengan nilai warna yang diinginkan */
+}
+
+.header {
+    background-color: navy;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+    font-weight: 700;
+    font-size: 30px;
+    justify-content:end;
+}
+.sidebar {
+    background-color: black;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    margin-top: 40px;
+    transform: translate(-250px);
+    transition: transform 250ms ease-in-out;
+}
+.profile {
+    text-align: center;
+    padding: 20px;
+    display:block;
+    cursor: pointer;
+}
+.profile img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 100px;
+    border: 2px solid #f1e8e6;
+}
+.profile h3 {
+    margin: 10px 0;
+}
+.profile li {
+    list-style: none;
+    display: inline-flex;
+    margin: 0 5px;
+    font-size: 20px;
+    padding: 10px;
+    transition: all 0.5s;
+}
+.profile a {
+    color: inherit;
+}
+.profile li:hover {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #361d32;
+    border-radius: 60px;
+}
+.menu li a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    padding: 20px;
+    border-bottom: 1px solid rgba(227, 224, 224, .2)
+}
+.menu li a:hover {
+background-color: #ddd;
+color: #361d32;
+transition: all 0.4s;
+text-align: center;
+}
+.toggle-icon div {
+    background-color: #f1e8e6;
+    width: 100%;
+    height: 3px;
+    transition: all 0.3s;
+}
+.toggle-icon {
+    position: fixed;
+    top: 22px;
+    left: 15px;
+    width: 22px;
+    height: 22px;
+    z-index: 9999;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.bar-center {
+    margin: 3px 0;
+}
+input[type="checkbox"]:checked ~ .sidebar {
+    transform: translateX(0);
+}
+input[type="checkbox"]:checked ~ .toggle-icon > .bar-top {
+    transform: rotate(135deg);
+    margin-top: 8px;
+}
+input[type="checkbox"]:checked ~ .toggle-icon > .bar-center {
+   opacity: 0;
+}
+input[type="checkbox"]:checked ~ .toggle-icon > .bar-bottom {
+    transform: rotate(-135deg);
+    margin-top: -12px;
+}
+.content {
+    width: 100%;
+    height: 550px;
+    display: block;
+    padding-top: 60px;
+}
+.content h1 {
+    color: blueviolet (255, 165, 0);
+    font-size: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.album {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.album img {
+    width: 23%;
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+.album img:hover {
+    scale: 1.1;
+    transition: all .3s ease-in-out;
+}
+    </style>
+</head>
+<body>
+    <div class="header">My Portofolio</div>
+    <input type="checkbox" class="toggle-sidebar" id="toggle-sidebar">
+    <label for="toggle-sidebar" class="toggle-icon">
+        <div class="bar-top"></div>
+        <div class="bar-center"></div>
+        <div class="bar-bottom"></div>
+    </label>
+    <div class="sidebar">
+        <div class="profile">
+            <img src="gambar2.jpg" alt="gambar2.jpg">
+            <h3>Rakha</h3>
+            <ul>
+                <li><a href="https://wa.me/(6281515327732)"><i class="fa fa-whatsapp"></i></a></li>
+                <li><a href="https://instagram.com/rkhputra?igshid=MTNiYzNiMzkwZA=="><i class="fa fa-instagram"></i></a></li>
+            </ul>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>Gallery</h1>
+        <div class="album">
+                <img src="gambar1.jpg" alt="album">
+                <img src="gambar5.jpg" alt="album">
+                <img src="gambar6.jpg" alt="album">
+        </div>
+    </div>
+</body>
+</html>
